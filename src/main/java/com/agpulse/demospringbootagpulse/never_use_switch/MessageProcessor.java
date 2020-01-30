@@ -5,4 +5,5 @@ package com.agpulse.demospringbootagpulse.never_use_switch;
  */
 public interface MessageProcessor {
     String process(Message message);
+    int getMyType();
 }

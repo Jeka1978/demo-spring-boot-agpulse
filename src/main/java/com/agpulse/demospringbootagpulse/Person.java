@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.List;
+
 /**
  * @author Evgeny Borisov
  */
@@ -14,11 +17,18 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Person {
+
+
     private String name;
     @JsonIgnore
     private int age;
-}
+
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Event> events;
+ }
 
 
 
